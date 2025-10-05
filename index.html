@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام مراقبة الصحة الفضائية - Space Medical Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <h1>نظام مراقبة الصحة الفضائية</h1>
+                </div>
+                <div class="mission-info">
+                    <span class="mission-id">المهمة: MISSION_2024</span>
+                    <span class="astronaut-id">رائد الفضاء: ASTRONAUT_001</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <i class="fas fa-wifi"></i>
+                <span id="connection-status">متصل</span>
+            </div>
+            <div class="status-item">
+                <i class="fas fa-clock"></i>
+                <span id="current-time">--:--:--</span>
+            </div>
+            <div class="status-item">
+                <i class="fas fa-shield-alt"></i>
+                <span id="system-status">نظام تشغيلي</span>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Vital Signs Section -->
+            <section class="vital-signs">
+                <h2><i class="fas fa-heartbeat"></i> العلامات الحيوية</h2>
+                <div class="cards-grid">
+                    <div class="card temperature-card">
+                        <div class="card-header">
+                            <i class="fas fa-thermometer-half"></i>
+                            <h3>درجة حرارة الجسم</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="value" id="body-temp">--°C</div>
+                            <div class="status" id="body-temp-status">جاري القياس...</div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="normal-range">المدى الطبيعي: 36.1°C - 37.2°C</span>
+                        </div>
+                    </div>
+
+                    <div class="card mobility-card">
+                        <div class="card-header">
+                            <i class="fas fa-hand-paper"></i>
+                            <h3>مرونة المفاصل</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="value" id="joint-mobility">--%</div>
+                            <div class="status" id="mobility-status">جاري القياس...</div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="normal-range">المدى الطبيعي: > 500</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Environmental Conditions -->
+            <section class="environmental">
+                <h2><i class="fas fa-globe"></i> الظروف البيئية</h2>
+                <div class="cards-grid">
+                    <div class="card cabin-temp-card">
+                        <div class="card-header">
+                            <i class="fas fa-thermometer-quarter"></i>
+                            <h3>درجة حرارة المقصورة</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="value" id="cabin-temp">--°C</div>
+                            <div class="status" id="cabin-temp-status">جاري القياس...</div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="normal-range">المدى المثالي: 18°C - 25°C</span>
+                        </div>
+                    </div>
+
+                    <div class="card humidity-card">
+                        <div class="card-header">
+                            <i class="fas fa-tint"></i>
+                            <h3>الرطوبة</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="value" id="humidity">--%</div>
+                            <div class="status" id="humidity-status">جاري القياس...</div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="normal-range">المدى المثالي: 30% - 70%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section class="alerts-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> التنبيهات الطبية</h2>
+                <div class="alerts-container" id="alerts-container">
+                    <div class="no-alerts">
+                        <i class="fas fa-check-circle"></i>
+                        <p>لا توجد تنبيهات طبية حالياً</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data History -->
+            <section class="data-history">
+                <h2><i class="fas fa-chart-line"></i> تاريخ البيانات</h2>
+                <div class="chart-container">
+                    <canvas id="dataChart" width="400" height="200"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 نظام مراقبة الصحة الفضائية - Space Medical Monitoring System</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-info-circle"></i> معلومات النظام</a>
+                    <a href="#"><i class="fas fa-cog"></i> الإعدادات</a>
+                    <a href="#"><i class="fas fa-phone"></i> الاتصال بمركز التحكم</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
